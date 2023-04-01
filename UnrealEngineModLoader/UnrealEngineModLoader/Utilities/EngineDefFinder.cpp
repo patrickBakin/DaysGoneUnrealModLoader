@@ -83,7 +83,7 @@ namespace ClassDefFinder
 			{
 				Class = Read<UE4::UClass*>((byte*)CoreUObject + GameProfile::SelectedGameProfile.defs.UObject.Class);
 			}
-			
+
 			auto ClassIndex = Class->GetIndex();
 			UE4::UObject* ClassCheck;
 			if (GameProfile::SelectedGameProfile.IsUsingFChunkedFixedUObjectArray)
@@ -321,12 +321,12 @@ namespace ClassDefFinder
 	{
 		Log::Info("Scanning For UFunction FunctionFlags Def.");
 		bool HasFunctionFlagsNotBeenFound = true;
-		auto WasRecentlyRendered = UE4::UObject::FindObject<UE4::UFunction>("Function Engine.Actor.WasRecentlyRendered");
+		auto WasRecentlyRendered = UE4::UObject::FindObject<UE4::UFunction>("Function Engine.ActorComponent.Activate");
 		GameProfile::SelectedGameProfile.defs.UFunction.FunctionFlags = GameProfile::SelectedGameProfile.defs.UStruct.OverallUStructSize; // Prevents scanning same area over and over.
 		while (HasFunctionFlagsNotBeenFound)
 		{
 			auto FunctionFlags = Read<int>((byte*)WasRecentlyRendered + GameProfile::SelectedGameProfile.defs.UFunction.FunctionFlags);
-			if (FunctionFlags == 1409418241)
+			if (FunctionFlags == 67240960/*1409418241*/)
 			{
 				HasFunctionFlagsNotBeenFound = false;
 			}
@@ -427,8 +427,8 @@ namespace ClassDefFinder
 					ArrayDimFound = true;
 				}
 
-				if(ArrayDimFound == false)
-				{ 
+				if (ArrayDimFound == false)
+				{
 					GameProfile::SelectedGameProfile.defs.Property.ArrayDim = GameProfile::SelectedGameProfile.defs.Property.ArrayDim + 0x8;
 				}
 			}
@@ -449,7 +449,7 @@ namespace ClassDefFinder
 				}
 			}
 			Log::Info("FProperty Offset Def located at: 0x%p", GameProfile::SelectedGameProfile.defs.Property.Offset);
-			
+
 		}
 		else
 		{
@@ -490,7 +490,7 @@ namespace ClassDefFinder
 	{
 		Log::Info("Scanning For UEProperty");
 		auto VectorObject = (UE4::UStruct*)UE4::UObject::FindObject<UE4::UObject>("ScriptStruct CoreUObject.Vector");
-		
+
 		if (!VectorObject->GetChildren()->IsA(UE4::UObject::StaticClass()))
 		{
 			GameProfile::SelectedGameProfile.bIsFProperty = true;
