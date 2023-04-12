@@ -151,10 +151,15 @@
     <ClCompile Include="..\UnrealEngineModLoader\UE4\CoreUObject_functions.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="ExampleMod.cpp" />
+    <ClCompile Include="SDK\DG_Basic.cpp" />
+    <ClCompile Include="SDK\DG_BendGame_functions.cpp" />
+    <ClCompile Include="SDK\DG_CoreUObject_functions.cpp" />
+    <ClCompile Include="SDK\DG_Engine_functions.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\UnrealEngineModLoader\UE4\Ue4.hpp" />
     <ClInclude Include="ExampleMod.h" />
+    <ClInclude Include="SDK.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\UnrealEngineModLoader\UnrealEngineModLoader.vcxproj">

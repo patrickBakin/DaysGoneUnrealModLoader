@@ -5,6 +5,7 @@
 #include "Basic.hpp"
 #include "Utilities//Pattern.h"
 #include "CoreUObject_classes.hpp"
+#include "../../ExampleMod/SDK.hpp"
 namespace UE4
 {
 	static void InitSDK()

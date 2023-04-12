@@ -25,6 +25,18 @@
     <ClCompile Include="ExampleMod.cpp">
       <Filter>Mod</Filter>
     </ClCompile>
+    <ClCompile Include="SDK\DG_Basic.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\DG_CoreUObject_functions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\DG_Engine_functions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\DG_BendGame_functions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\UnrealEngineModLoader\UE4\Ue4.hpp">
@@ -33,5 +45,6 @@
     <ClInclude Include="ExampleMod.h">
       <Filter>Mod</Filter>
     </ClInclude>
+    <ClInclude Include="SDK.hpp" />
   </ItemGroup>
 </Project>

@@ -20,4 +20,5 @@ StaticLoadObject=0x186D1B0
 SpawnActorFTrans=0x2657110
 CallFunctionByNameWithArguments=0x185F250
 ProcessEvent=0x18679C0
+CreateDefaultObject=0x180D7D0
 #0x5E2750 
